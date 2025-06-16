@@ -19,17 +19,20 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div
+      className="min-h-screen w-full flex justify-center pt-10 bg-cover bg-center"
+      style={{ backgroundImage: "url('/banner.jpg')" }}
+    >
       <div className="w-full max-w-md">
         {loading && (
-          <div className="bg-white bg-opacity-90 rounded-xl shadow-lg p-8 flex flex-col items-center">
-            <p className="text-center text-lg text-blue-700">Carregando clima...</p>
+          <div className="bg-black bg-opacity-80 rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <p className="text-center text-lg text-white drop-shadow-lg">Carregando clima...</p>
           </div>
         )}
         {error && (
-          <div className="bg-white bg-opacity-90 rounded-xl shadow-lg p-8 flex flex-col items-center">
-            <span className="text-red-500 text-lg mb-2">{error}</span>
-            <span className="text-gray-700 text-sm mb-4">
+          <div className="bg-black bg-opacity-80 rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <span className="text-red-400 text-lg mb-2 drop-shadow-lg">{error}</span>
+            <span className="text-gray-200 text-sm mb-4 drop-shadow-lg">
               Verifique se você permitiu o acesso à localização no navegador e se está usando HTTPS ou localhost.
             </span>
             <button
@@ -41,7 +44,7 @@ export default function App() {
           </div>
         )}
         {!weather && !loading && !error && (
-          <div className="bg-white bg-opacity-90 rounded-xl shadow-lg p-8 flex flex-col items-center">
+          <div className="bg-black bg-opacity-80 rounded-xl shadow-lg p-8 flex flex-col items-center">
             <button
               className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition text-lg"
               onClick={handleGetWeather}
