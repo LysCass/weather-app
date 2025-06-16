@@ -19,15 +19,7 @@ export default function App() {
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center"
-      style={{
-        backgroundImage: "url('/banner.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className="min-h-screen flex items-center justify-center">
       <div className="w-full max-w-md">
         {loading && (
           <div className="bg-white bg-opacity-90 rounded-xl shadow-lg p-8 flex flex-col items-center">
