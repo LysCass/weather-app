@@ -6,7 +6,7 @@ interface WeatherCardProps {
 
 export default function WeatherCard({ weather }: WeatherCardProps) {
   return (
-    <div className="bg-white bg-opacity-90 rounded-xl shadow-xl p-8 max-w-sm w-full flex flex-col items-center mx-auto">
+    <div className="bg-white bg-opacity-80 rounded-xl shadow-xl p-8 max-w-sm w-full flex flex-col items-center mx-auto">
       <h1 className="text-3xl font-bold mb-2 text-blue-700">Clima Atual</h1>
       <h2 className="text-xl font-semibold mb-4 text-gray-700 text-center">
         {weather.location.name}, {weather.location.region}
