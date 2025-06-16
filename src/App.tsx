@@ -20,34 +20,38 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-400 via-blue-200 to-blue-100">
-      {loading && (
-        <p className="text-center text-lg text-blue-700">Carregando clima...</p>
-      )}
-      {error && (
-        <div className="bg-white bg-opacity-90 rounded-xl shadow-lg p-8 max-w-sm w-full flex flex-col items-center">
-          <span className="text-red-500 text-lg mb-2">{error}</span>
-          <span className="text-gray-700 text-sm mb-4">
-            Verifique se você permitiu o acesso à localização no navegador e se está usando HTTPS ou localhost.
-          </span>
-          <button
-            className="px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-600 transition"
-            onClick={handleGetWeather}
-          >
-            Tentar novamente
-          </button>
-        </div>
-      )}
-      {!weather && !loading && !error && (
-        <div className="flex flex-col items-center">
-          <button
-            className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition text-lg"
-            onClick={handleGetWeather}
-          >
-            Obter clima pela minha localização
-          </button>
-        </div>
-      )}
-      {weather && <WeatherCard weather={weather} />}
+      <div className="w-full max-w-md">
+        {loading && (
+          <div className="bg-white bg-opacity-90 rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <p className="text-center text-lg text-blue-700">Carregando clima...</p>
+          </div>
+        )}
+        {error && (
+          <div className="bg-white bg-opacity-90 rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <span className="text-red-500 text-lg mb-2">{error}</span>
+            <span className="text-gray-700 text-sm mb-4">
+              Verifique se você permitiu o acesso à localização no navegador e se está usando HTTPS ou localhost.
+            </span>
+            <button
+              className="px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-600 transition"
+              onClick={handleGetWeather}
+            >
+              Tentar novamente
+            </button>
+          </div>
+        )}
+        {!weather && !loading && !error && (
+          <div className="bg-white bg-opacity-90 rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <button
+              className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition text-lg"
+              onClick={handleGetWeather}
+            >
+              Obter clima pela minha localização
+            </button>
+          </div>
+        )}
+        {weather && <WeatherCard weather={weather} />}
+      </div>
     </div>
   );
 }
