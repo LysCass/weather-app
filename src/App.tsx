@@ -19,11 +19,8 @@ export default function App() {
   };
 
   return (
-    <div
-      className="min-h-screen w-full flex justify-center pt-10 bg-cover bg-center"
-      style={{ backgroundImage: "url('/banner.jpg')" }}
-    >
-      <div className="w-full max-w-md">
+    <div className="min-h-screen w-full flex items-center justify-center">
+      <div className="w-full max-w-md flex flex-col items-center">
         {loading && (
           <div className="bg-black bg-opacity-80 rounded-xl shadow-lg p-8 flex flex-col items-center">
             <p className="text-center text-lg text-white drop-shadow-lg">Carregando clima...</p>
